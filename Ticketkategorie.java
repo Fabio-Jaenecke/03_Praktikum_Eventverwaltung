@@ -3,10 +3,10 @@
  * Hier werden die Ticketkategorien definiert und wie welche Tickets gekauft
  * werden können. Jede Kategorie hat eine Kategoriebezeichnung, einen Ticketpreis,
  * eine Anzahl gekaufter Tickets, ein Limit mit der maximalen Anzahl verfügbarer
- * Tickets und 
+ * Tickets. Ausserdem können die Einnahmen berechnent werden.
  *
  * @author (jaenefab)
- * @version (1.0)
+ * @version (1.1)
  */
 public class Ticketkategorie
 {
@@ -43,7 +43,7 @@ public class Ticketkategorie
         if (anzahl == limit){
            System.out.println("Es sind bereits alle " + bezeichnung + "s ausverkauft.");
         }
-        if ((anzahl + kaufeTicketAnzahl) >= limit){
+        else if ((anzahl + kaufeTicketAnzahl) > limit){
            System.out.println("Es sind leider keine " + bezeichnung + "s in dieser Anzahl verfügbar.");
         }
         else {

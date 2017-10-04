@@ -5,7 +5,7 @@
  * Berechnungen zur Bilanz.
  *
  * @author (jaenefab)
- * @version (1.0)
+ * @version (1.1)
  */
 public class Event
 {
@@ -51,13 +51,33 @@ public class Event
      * Gibt dem Benutzer die Möglichkeit tickets aller 3 Kategorien zu kaufen.
      */
     public void kaufeTickets(int anzahlVIPTickets, int anzahlTribuenenTickets, int anzahlInnenRaumTickets){
-        kategorie1.setzeAnzahl(anzahlVIPTickets);
-        kategorie2.setzeAnzahl(anzahlTribuenenTickets);
-        kategorie3.setzeAnzahl(anzahlInnenRaumTickets);
+        kaufeVIPTickets(anzahlVIPTickets);
+        kaufeTribuenenTickets(anzahlTribuenenTickets);
+        kaufeInnenRaumTickets(anzahlInnenRaumTickets);
     }
     
+    /**
+     * Gibt dem Benutzer die Möglichkeit nur VIP Tickets zu kaufen.
+     */
+    public void kaufeVIPTickets(int anzahlTickets){
+        kategorie1.setzeAnzahl(anzahlTickets);
+    }
     
     /**
+     * Gibt dem Benutzer die Möglichkeit nur TribuenenTickets zu kaufen.
+     */
+    public void kaufeTribuenenTickets(int anzahlTickets){
+        kategorie2.setzeAnzahl(anzahlTickets);
+    }
+        
+    /**
+     * Gibt dem Benutzer die Möglichkeit nur Innenraumtickets zu kaufen.
+     */
+    public void kaufeInnenRaumTickets(int anzahlTickets){
+         kategorie3.setzeAnzahl(anzahlTickets);
+    }
+    
+        /**
      * Berechnet und gibt die Gesamteinnahmen des Events
      */
     private int gibGesamtEinnahme(){
